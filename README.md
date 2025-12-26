@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React ShadCN Dashboard Projesi
 
-## Getting Started
+Bu proje [Next.js](https://nextjs.org) 16.1.1 ile oluşturulmuş, [ShadCN UI](https://ui.shadcn.com/) bileşenleri ve modern React teknolojilerini kullanan gelişmiş bir dashboard uygulamasıdır.
 
-First, run the development server:
+## 🚀 Özellikler
+
+- **Next.js 16.1.1** - App Router ile modern React framework'ü
+- **React 19** - En güncel React sürümü
+- **TypeScript** - Tip güvenliği
+- **Tailwind CSS v4** - Modern CSS framework'ü
+- **ShadCN UI** - Yüksek kaliteli, erişilebilir UI bileşenleri
+- **Recharts** - Etkileşimli grafikler ve veri görselleştirme
+- **TanStack Table** - Gelişmiş veri tabloları
+- **Tabler Icons** - Tutarlı ikon seti
+
+## 📁 Proje Yapısı
+
+```
+src/
+├── app/                    # Next.js App Router sayfaları
+│   ├── (dashboard)/       # Dashboard route grubu
+│   ├── globals.css        # Global stiller
+│   ├── layout.tsx         # Ana layout
+│   └── page.tsx           # Ana sayfa
+├── components/            # React bileşenleri
+│   ├── shared/           # Paylaşılan bileşenler
+│   └── ui/               # ShadCN UI bileşenleri
+├── config/               # Yapılandırma dosyaları
+├── features/             # Özellik tabanlı modüller
+├── hooks/                # Özel React hook'ları
+├── lib/                  # Yardımcı fonksiyonlar
+└── types/                # TypeScript tip tanımları
+```
+
+## 🛠️ Başlarken
+
+### Gereksinimler
+
+- Node.js 18+
+- npm, yarn, pnpm veya bun
+
+### Kurulum
+
+1. Bağımlılıkları yükleyin:
+
+```bash
+npm install
+# veya
+yarn install
+# veya
+pnpm install
+```
+
+2. Geliştirme sunucusunu başlatın:
 
 ```bash
 npm run dev
-# or
+# veya
 yarn dev
-# or
+# veya
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açarak uygulamayı görüntüleyin.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📊 Dashboard Özellikleri
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **İnteraktif Grafikler**: Recharts ile oluşturulmuş responsive grafikler
+- **Veri Tabloları**: TanStack Table ile gelişmiş tablo işlevselliği
+- **Responsive Tasarım**: Mobil uyumlu tasarım
+- **Koyu/Açık Tema**: Otomatik tema desteği
+- **Erişilebilirlik**: ShadCN UI bileşenleri ile tam erişilebilirlik desteği
 
-## Learn More
+## 🏗️ Geliştirme
 
-To learn more about Next.js, take a look at the following resources:
+### Kullanılan Teknolojiler
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend Framework**: Next.js 16.1.1
+- **UI Kütüphanesi**: ShadCN UI (Radix UI temelli)
+- **Styling**: Tailwind CSS v4
+- **Icons**: Tabler Icons
+- **Charts**: Recharts
+- **Tables**: TanStack Table
+- **Type Safety**: TypeScript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Komutlar
 
-## Deploy on Vercel
+- `npm run dev` - Geliştirme sunucusunu başlat
+- `npm run build` - Üretim için derle
+- `npm run start` - Üretim sunucusunu başlat
+- `npm run lint` - Kod kalitesi kontrolü
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📚 Daha Fazla Bilgi
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js hakkında daha fazla bilgi için:
+
+- [Next.js Dokümantasyonu](https://nextjs.org/docs) - Next.js özellikleri ve API'leri
+- [Next.js Öğren](https://nextjs.org/learn) - İnteraktif Next.js eğitimi
+
+ShadCN UI hakkında:
+- [ShadCN UI Dokümantasyonu](https://ui.shadcn.com/) - Bileşenler ve kullanım kılavuzu
+
+## 🚀 Dağıtım
+
+Bu uygulamayı dağıtmanın en kolay yolu [Vercel Platform](https://vercel.com/new) kullanmaktır.
+
+Daha fazla bilgi için [Next.js dağıtım dokümantasyonunu](https://nextjs.org/docs/app/building-your-application/deploying) inceleyin.
+
+## 📝 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
