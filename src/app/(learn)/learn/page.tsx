@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button"
 
 const items = [
   { href: "/learn/components", title: "Component & JSX", desc: "Lego mantığı + JSX pratik" },
-  { href: "/learn/props", title: "Props", desc: "Yukarıdan aşağı veri akışı" },
-  { href: "/learn/state-lifting", title: "State & Lifting", desc: "useState + state’i yukarı taşıma" },
+  { href: "/learn/props/basic", title: "Props", desc: "Yukarıdan aşağı veri akışı" },
+  { href: "/learn/state/lifting", title: "State & Lifting", desc: "useState + state’i yukarı taşıma" },
 ]
 
 export default function LearnHomePage() {
