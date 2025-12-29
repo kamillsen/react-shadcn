@@ -1,134 +1,64 @@
 import {
+  IconDashboard,
+  IconFileDescription,
+  IconFileAi,
   IconCamera,
   IconChartBar,
-  IconDashboard,
-  IconDatabase,
-  IconFileAi,
-  IconFileDescription,
-  IconFileWord,
-  IconFolder,
-  IconHelp,
   IconInnerShadowTop,
-  IconListDetails,
-  IconReport,
-  IconSearch,
-  IconSettings,
-  IconUsers,
 } from "@tabler/icons-react"
 
 export const navigationData = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/",
       icon: IconDashboard,
+      isActive: false, // varsayılan
     },
     {
-      title: "Lifecycle",
+      title: "Learn",
       url: "#",
-      icon: IconListDetails,
+      icon: IconInnerShadowTop,
+      isActive: false,
+      items: [
+        {
+          title: "Components",
+          url: "/learn/components",
+        },
+      ],
     },
     {
-      title: "Analytics",
+      title: "Props",
+      url: "#",
+      icon: IconFileDescription,
+      isActive: false,
+      items: [
+        { title: "Basic", url: "/learn/props/basic" },
+        { title: "Children", url: "/learn/props/children" },
+        { title: "Callback", url: "/learn/props/callback" },
+      ],
+    },
+    {
+      title: "State",
       url: "#",
       icon: IconChartBar,
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
-    },
-  ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: IconCamera,
-      isActive: true,
-      url: "#",
+      isActive: false,
       items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
+        { title: "Basic", url: "/learn/state/basic" },
+        { title: "Lifting", url: "/learn/state/lifting" },
+        { title: "Objects & Arrays", url: "/learn/state/objects-arrays" },
       ],
     },
     {
-      title: "Proposal",
-      icon: IconFileDescription,
+      title: "Hooks",
       url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
       icon: IconFileAi,
-      url: "#",
+      isActive: false,
       items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
+        { title: "useEffect", url: "/learn/hooks/effect" },
+        { title: "useContext", url: "/learn/hooks/context" },
+        { title: "Performance", url: "/learn/hooks/performance" },
       ],
-    },
-  ],
-  navSecondary: [
-    {
-      title: "Settings",
-      url: "#",
-      icon: IconSettings,
-    },
-    {
-      title: "Get Help",
-      url: "#",
-      icon: IconHelp,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: IconSearch,
-    },
-  ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: IconDatabase,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: IconReport,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: IconFileWord,
     },
   ],
 }

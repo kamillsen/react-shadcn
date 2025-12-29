@@ -6,62 +6,7 @@ Bu doküman, `react-shadcn-me` projesinin dosya yapısını detaylı bir şekild
 
 ```
 react-shadcn-me/
-├── doc/
-│   └── project-structure.md          # Bu doküman
-├── src/
-│   ├── app/
-│   │   ├── (dashboard)/
-│   │   │   ├── layout.tsx            # Dashboard sayfası için layout
-│   │   │   └── page.tsx              # Dashboard ana sayfası
-│   │   ├── layout.tsx                # Ana uygulama layout'u
-│   │   └── page.tsx                  # Ana sayfa (home)
-│   ├── components/
-│   │   ├── shared/
-│   │   │   ├── app-sidebar.tsx       # Ana sidebar bileşeni
-│   │   │   ├── chart-area-interactive.tsx  # Etkileşimli grafik bileşeni
-│   │   │   ├── data-table.tsx        # Veri tablosu bileşeni
-│   │   │   ├── nav-documents.tsx     # Doküman navigasyonu
-│   │   │   ├── nav-main.tsx          # Ana navigasyon
-│   │   │   ├── nav-secondary.tsx     # İkincil navigasyon
-│   │   │   ├── nav-user.tsx          # Kullanıcı navigasyonu
-│   │   │   ├── section-cards.tsx     # Kartlar bölümü
-│   │   │   └── site-header.tsx       # Site başlığı
-│   │   └── ui/
-│   │       ├── avatar.tsx            # Avatar bileşeni
-│   │       ├── badge.tsx             # Rozet bileşeni
-│   │       ├── breadcrumb.tsx        # Breadcrumb navigasyonu
-│   │       ├── button.tsx            # Düğme bileşeni
-│   │       ├── card.tsx              # Kart bileşeni
-│   │       ├── chart.tsx             # Grafik bileşeni
-│   │       ├── checkbox.tsx          # Onay kutusu
-│   │       ├── drawer.tsx            # Çekmece bileşeni
-│   │       ├── dropdown-menu.tsx     # Açılır menü
-│   │       ├── input.tsx             # Giriş alanı
-│   │       ├── label.tsx             # Etiket bileşeni
-│   │       ├── select.tsx            # Seçim bileşeni
-│   │       ├── separator.tsx         # Ayırıcı
-│   │       ├── sheet.tsx             # Sayfa bileşeni
-│   │       ├── sidebar.tsx           # Sidebar bileşeni
-│   │       ├── skeleton.tsx          # İskelet yükleme
-│   │       ├── sonner.tsx            # Bildirim bileşeni
-│   │       ├── table.tsx             # Tablo bileşeni
-│   │       ├── tabs.tsx              # Sekme bileşeni
-│   │       ├── toggle-group.tsx      # Geçiş grubu
-│   │       ├── toggle.tsx            # Geçiş düğmesi
-│   │       └── tooltip.tsx           # İpucu bileşeni
-│   ├── config/
-│   │   └── navigation.ts             # Navigasyon yapılandırması
-│   ├── features/
-│   │   └── dashboard/
-│   │       ├── components/           # Dashboard'a özel bileşenler (henüz boş)
-│   │       ├── data.json             # Dashboard verileri
-│   │       └── hooks/                # Dashboard'a özel hook'lar (henüz boş)
-│   ├── hooks/
-│   │   └── use-mobile.ts             # Mobil cihaz tespiti hook'u
-│   ├── lib/
-│   │   └── utils.ts                  # Yardımcı fonksiyonlar
-│   └── types/
-│       └── index.ts                  # Genel TypeScript tipleri
+├── .gitignore                        # Git tarafından yoksayılan dosyalar
 ├── components.json                   # ShadCN UI yapılandırması
 ├── eslint.config.mjs                 # ESLint yapılandırması
 ├── next-env.d.ts                     # Next.js ortam tipleri
@@ -70,7 +15,109 @@ react-shadcn-me/
 ├── postcss.config.mjs                # PostCSS yapılandırması
 ├── README.md                         # Proje açıklaması
 ├── tsconfig.json                     # TypeScript yapılandırması
-└── public/                           # Statik dosyalar (favicon, resimler vb.)
+├── .next/                            # Next.js derleme çıktıları (build sonrası oluşur)
+│   ├── dev/
+│   │   ├── build-manifest.json
+│   │   ├── fallback-build-manifest.json
+│   │   ├── lock
+│   │   ├── package.json
+│   │   ├── prerender-manifest.json
+│   │   ├── routes-manifest.json
+│   │   └── trace
+│   ├── build/
+│   ├── cache/
+│   └── logs/
+├── doc/                              # Dokümantasyon dosyaları
+│   ├── link.txt
+│   ├── nextjs-app-router-render-kural-notlari.md
+│   ├── project-structure.md          # Bu doküman
+│   ├── react-nextjs-roadmap.md
+│   └── props/
+├── public/                           # Statik dosyalar (favicon, resimler vb.)
+└── src/                              # Kaynak kodlar
+    ├── app/                          # Next.js App Router sayfaları ve layout'lar
+    │   ├── (dashboard)/              # Dashboard route grubu
+    │   │   ├── layout.tsx            # Dashboard layout'u
+    │   │   └── page.tsx              # Dashboard ana sayfası
+    │   ├── (learn)/                  # Learn route grubu
+    │   │   └── learn/
+    │   │       ├── components/
+    │   │       │   └── page.tsx      # Components öğrenme sayfası
+    │   │       ├── layout.tsx        # Learn layout'u
+    │   │       ├── page.tsx          # Learn ana sayfası
+    │   │       ├── props/
+    │   │       │   ├── basic/
+    │   │       │   │   └── page.tsx  # Basic props sayfası
+    │   │       │   ├── callback/
+    │   │       │   │   └── page.tsx  # Callback props sayfası
+    │   │       │   ├── children/
+    │   │       │   │   └── page.tsx  # Children props sayfası
+    │   │       │   ├── layout.tsx    # Props layout'u
+    │   │       │   └── page.tsx      # Props index sayfası
+    │   │       └── state/
+    │   │           ├── basic/
+    │   │           │   └── page.tsx  # Basic state sayfası
+    │   │           ├── layout.tsx    # State layout'u
+    │   │           ├── lifting/
+    │   │           │   └── page.tsx  # Lifting state sayfası
+    │   │           ├── objects-arrays/
+    │   │           │   └── page.tsx  # Objects/arrays state sayfası
+    │   │           └── page.tsx      # State index sayfası
+    │   ├── globals.css               # Global CSS stilleri
+    │   ├── layout.tsx                # Ana uygulama layout'u
+    │   └── page.tsx                  # Ana sayfa (home)
+    ├── components/                   # React bileşenleri
+    │   ├── data-table.tsx            # Veri tablosu bileşeni
+    │   ├── nav-main.tsx              # Ana navigasyon
+    │   ├── section-cards.tsx         # Kartlar bölümü
+    │   ├── site-header.tsx           # Site başlığı
+    │   └── ui/                       # ShadCN UI bileşenleri
+    │       ├── avatar.tsx            # Avatar bileşeni
+    │       ├── badge.tsx             # Rozet bileşeni
+    │       ├── breadcrumb.tsx        # Breadcrumb navigasyonu
+    │       ├── button.tsx            # Düğme bileşeni
+    │       ├── card.tsx              # Kart bileşeni
+    │       ├── chart.tsx             # Grafik bileşeni
+    │       ├── checkbox.tsx          # Onay kutusu
+    │       ├── drawer.tsx            # Çekmece bileşeni
+    │       ├── dropdown-menu.tsx     # Açılır menü
+    │       ├── input.tsx             # Giriş alanı
+    │       ├── label.tsx             # Etiket bileşeni
+    │       ├── select.tsx            # Seçim bileşeni
+    │       ├── separator.tsx         # Ayırıcı
+    │       ├── sheet.tsx             # Sayfa bileşeni
+    │       ├── sidebar.tsx           # Sidebar bileşeni
+    │       ├── skeleton.tsx          # İskelet yükleme
+    │       ├── sonner.tsx            # Bildirim bileşeni
+    │       ├── table.tsx             # Tablo bileşeni
+    │       ├── tabs.tsx              # Sekme bileşeni
+    │       ├── toggle-group.tsx      # Geçiş grubu
+    │       ├── toggle.tsx            # Geçiş düğmesi
+    │       └── tooltip.tsx           # İpucu bileşeni
+    ├── config/                       # Yapılandırma dosyaları
+    │   └── navigation.ts             # Navigasyon yapılandırması
+    ├── features/                     # Özellik tabanlı modüller
+    │   ├── dashboard/                # Dashboard özelliği
+    │   │   ├── components/           # Dashboard'a özel bileşenler (henüz boş)
+    │   │   ├── data.json             # Dashboard verileri
+    │   │   └── hooks/                # Dashboard'a özel hook'lar (henüz boş)
+    │   └── learn/                    # Learn özelliği
+    │       ├── props/
+    │       │   └── examples/
+    │       │       ├── BasicPropsExample.tsx
+    │       │       ├── ChildrenExample.tsx
+    │       │       └── CallbackExample.tsx
+    │       └── state/
+    │           └── examples/
+    │               ├── BasicStateExample.tsx
+    │               ├── LiftingExample.tsx
+    │               └── ObjectsArraysExample.tsx
+    ├── hooks/                        # Özel React hook'ları
+    │   └── use-mobile.ts             # Mobil cihaz tespiti hook'u
+    ├── lib/                          # Yardımcı fonksiyonlar
+    │   └── utils.ts                  # Yardımcı fonksiyonlar
+    └── types/                        # TypeScript tip tanımları
+        └── index.ts                  # Genel TypeScript tipleri
 ```
 
 ## Detaylı Açıklamalar
@@ -124,6 +171,12 @@ Yapılandırma dosyaları. Uygulama ayarları ve sabit veriler burada.
   - **`components/`**: Dashboard'a özel bileşenler (henüz boş, gelecekte ekleme için hazır).
   - **`data.json`**: Dashboard verileri. Grafik ve tablo için örnek veri seti. Gerçek uygulamada API'den gelir.
   - **`hooks/`**: Dashboard'a özel hook'lar (henüz boş, veri çekme veya state yönetimi için).
+
+- **`learn/`**: Öğrenme modülü için dosyalar.
+  - **`props/`**: Props ile ilgili örnekler ve açıklamalar.
+    - **`examples/`**: Props örnek bileşenleri (BasicPropsExample, ChildrenExample, CallbackExample).
+  - **`state/`**: State yönetimi ile ilgili örnekler.
+    - **`examples/`**: State örnek bileşenleri (BasicStateExample, LiftingExample, ObjectsArraysExample).
 
 #### `src/hooks/`
 Özel React hook'ları. Yeniden kullanılabilir mantık parçaları.
