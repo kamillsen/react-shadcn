@@ -8,9 +8,9 @@ import { Input } from "@/components/ui/input"
 type Todo = { id: number; text: string }
 
 export default function ObjectsArraysExample() {
-  const [profile, setProfile] = useState({ city: "İstanbul", job: "Frontend" })
-  const [todos, setTodos] = useState<Todo[]>([{ id: 1, text: "useState çalış" }])
-  const [text, setText] = useState("")
+  const [profile, setProfile] = useState({ city: "İstanbul", job: "Frontend" }) 
+  const [todos, setTodos] = useState<Todo[]>([{ id: 1, text: "useState çalış" }]) // üstte type tanımlandı
+  const [text, setText] = useState("") 
 
   return (
     <Card>

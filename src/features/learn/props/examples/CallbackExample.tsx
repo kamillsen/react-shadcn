@@ -50,12 +50,17 @@ export default function CallbackExample() {
 
   return (
     <Card>
+      
       <CardHeader>
         <CardTitle className="text-base">Callback Props</CardTitle>
         <CardDescription>
-          Parent fonksiyonu props olarak verir, child tıklayınca çağırır.
+          Parent, hangi ürünün seçileceğine karar veren fonksiyonu child&apos;a
+          props olarak geçirir; child butona tıkladığında sadece bu fonksiyonu
+          çağırıp seçimi parent&apos;a bildirir. Veri ve state parent&apos;ta kalır,
+          child ise sadece olayı tetikler. Bu iletişim şekline &quot;callback prop&quot; denir.
         </CardDescription>
       </CardHeader>
+
 
       <CardContent className="space-y-4">
         {/* Üstte seçilen ürünü gösteriyoruz (Parent state) */}

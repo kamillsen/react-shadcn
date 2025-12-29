@@ -29,15 +29,21 @@ export default function BasicStateExample() {
 
         <div className="space-y-2">
           <div className="text-sm text-muted-foreground">İsmini yaz:</div>
-          <Input
-            placeholder="Örn: Kaan"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+
+          <div className="flex items-center gap-2">
+            <Input
+              placeholder="Örn: Ahmet"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Button onClick={() => setName("")}>Temizle</Button>
+          </div>
+
           <div className="text-sm">
             Merhaba, <b>{name || "..."}</b>
           </div>
         </div>
+
       </CardContent>
     </Card>
   )
