@@ -55,6 +55,7 @@ export const navigationData = {
       icon: IconFileAi,
       isActive: false,
       items: [
+        { title: "Hooks Ana Sayfa", url: "/learn/hooks/" },
         { title: "useEffect", url: "/learn/hooks/effect" },
         { title: "useContext", url: "/learn/hooks/context" },
         { title: "Performance", url: "/learn/hooks/performance" },
