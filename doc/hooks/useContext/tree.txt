@@ -1,0 +1,16 @@
+src/
+├── app/
+│   └── (learn)/
+│       └── learn/
+│           └── hooks/
+│               └── context/
+│                   ├── layout.tsx        # 📦 Ana Layout - Provider'ları sarar
+│                   └── page.tsx          # 🎯 Ana Sayfa - Demo ve açıklamalar
+└── features/
+    └── learn/
+        └── hooks/
+            └── context/
+                └── theme/                # 🎨 Tema sistemi dosyaları
+                    ├── ThemeContext.tsx  # 🏗️ Context tanımı ve hook
+                    ├── ThemeProvider.tsx # 🔧 Provider mantığı
+                    └── ThemeToggle.tsx   # 🎮 Kullanıcı arayüzü
