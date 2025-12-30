@@ -1,0 +1,2 @@
+- tree -I 'node_modules|.next|.git' -L 8 -a
+    => bu koddaki 8 derinlik gibi bir şey. Ne kadar içeri giricez şeklinde. Eğer tree de görünmeyen dosya olursa arttır.

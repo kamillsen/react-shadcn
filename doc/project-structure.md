@@ -15,9 +15,7 @@ react-shadcn-me/
 ├── postcss.config.mjs
 ├── README.md
 ├── tsconfig.json
-├── .git/...
 ├── .next/
-│   └── dev/...
 ├── doc/
 │   ├── kaynak.txt
 │   ├── link.txt
@@ -28,7 +26,7 @@ react-shadcn-me/
 │       ├── react-callback-props-selectedid-notlari.md
 │       ├── react-children-panel-notlari.md
 │       └── react-lifting-vs-callback-extended.md
-├── node_modules/...
+├── node_modules/
 ├── public/
 │   ├── file.svg
 │   ├── globe.svg
@@ -53,8 +51,9 @@ react-shadcn-me/
     │           │   └── page.tsx
     │           ├── hook/
     │           │   ├── page.tsx
-    │           │   ├── context/
-    │           │   │   └── page.tsx
+    │           │   ├── context/           # 🎨 useContext Bölümü EKLENDİ
+    │           │   │   ├── layout.tsx     # ThemeProvider ile saran layout
+    │           │   │   └── page.tsx       # Ana useContext demo sayfası
     │           │   └── effect/
     │           │       ├── page.tsx
     │           │       ├── basic/
@@ -67,9 +66,9 @@ react-shadcn-me/
     │           │   ├── layout.tsx
     │           │   ├── page.tsx
     │           │   ├── basic/
-    │           │   │   └── page.tsx
+    │           │       └── page.tsx
     │           │   ├── callback/
-    │           │   │   └── page.tsx
+    │           │       └── page.tsx
     │           │   └── children/
     │           │       └── page.tsx
     │           └── state/
@@ -129,11 +128,16 @@ react-shadcn-me/
     │   │   └── hooks/
     │   └── learn/
     │       ├── hooks/
-    │       │   └── effect/
-    │       │       └── example/
-    │       │           ├── useEffectBasic.tsx
-    │       │           ├── useEffectCleanup.tsx
-    │       │           └── useEffectFetch.tsx
+    │       │   ├── effect/
+    │       │   │   └── example/
+    │       │   │       ├── useEffectBasic.tsx
+    │       │   │       ├── useEffectCleanup.tsx
+    │       │   │       └── useEffectFetch.tsx
+    │       │   └── context/              # 🎨 Tema sistemi dosyaları EKLENDİ
+    │       │       └── theme/
+    │       │           ├── ThemeContext.tsx
+    │       │           ├── ThemeProvider.tsx
+    │       │           └── ThemeToggle.tsx
     │       ├── props/
     │       │   └── examples/
     │       │       ├── BasicPropsExample.tsx
