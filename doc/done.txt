@@ -1,0 +1,1 @@
+- Todo App da sayfa yenilendiğinde light tema geliyoe sonra dark oluyor. renderdan önce bunu ayaramalı bence.
