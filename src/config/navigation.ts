@@ -13,7 +13,7 @@ export const navigationData = {
       title: "Dashboard",
       url: "/",
       icon: IconDashboard,
-      isActive: false, // varsayılan
+      isActive: false,
     },
     {
       title: "Learn",
@@ -60,6 +60,13 @@ export const navigationData = {
         { title: "useContext", url: "/learn/hooks/context" },
         { title: "Performance", url: "/learn/hooks/performance" },
       ],
+    },
+    {
+      title: "Todo App",
+      url: "/todo-app",
+      icon: IconFileAi,
+      isActive: false,
+      // items dizisi buradan kaldırıldı, böylece açılır menü olmayacak
     },
   ],
 }

@@ -13,7 +13,7 @@ import { Separator } from '@/components/ui/separator';
 import { Sun, Moon } from 'lucide-react';
 
 export default function TodoAppPage() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const [showForm, setShowForm] = useState(true);
 
   return (
@@ -29,19 +29,7 @@ export default function TodoAppPage() {
         </div>
         
         <div className="flex items-center gap-2">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={toggleTheme}
-            title="Temayı değiştir"
-          >
-            {theme === 'dark' ? (
-              <Sun className="h-4 w-4" />
-            ) : (
-              <Moon className="h-4 w-4" />
-            )}
-          </Button>
-          
+         <ThemeToggle />
           <Button
             variant="outline"
             onClick={() => setShowForm(!showForm)}
