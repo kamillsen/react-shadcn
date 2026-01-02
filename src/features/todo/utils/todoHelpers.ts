@@ -113,7 +113,7 @@ export const formatTodoDate = (date: Date): string => {
   });
 };
 
-// Priority renkleri
+// Priority renkleri / Önceliğe göre renk belirleme
 export const getPriorityColor = (priority: 'low' | 'medium' | 'high'): string => {
   switch (priority) {
     case 'high':

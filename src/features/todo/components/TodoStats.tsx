@@ -73,6 +73,8 @@ export default function TodoStats() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      {/* Görevler için genel istatistik kartı */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -81,7 +83,7 @@ export default function TodoStats() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {/* İstatistik kartları */}
+          {/* Toplam, Tamamlanan, Devam Eden ve Süresi Geçen görev sayılarını gösteren mini kartlar */}
           <div className="grid grid-cols-2 gap-3">
             {statsConfig.map((stat) => (
               <div
@@ -97,17 +99,18 @@ export default function TodoStats() {
             ))}
           </div>
 
-          {/* Tamamlanma oranı */}
+          {/* Tamamlanma oranını yüzde olarak ve progress bar ile gösteren kart alanı */}
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
               <span>Tamamlanma Oranı</span>
               <span className="font-medium">{completionRate}%</span>
             </div>
-            <Progress value={completionRate} className="h-2" />
+            <Progress value={completionRate} className="h-3" />
           </div>
         </CardContent>
       </Card>
 
+      {/* Görevlerin öncelik seviyelerine göre dağılımını gösteren kart */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
@@ -118,12 +121,15 @@ export default function TodoStats() {
         <CardContent className="space-y-4">
           {priorityStats.map((priority) => (
             <div key={priority.level} className="space-y-2">
+              {/* İlgili öncelik seviyesindeki görev adedi satırı */}
               <div className="flex justify-between text-sm">
                 <span className="font-medium">{priority.level} Öncelik</span>
                 <span>{priority.count} görev</span>
               </div>
+
+              {/* İlgili önceliğin toplam içindeki yüzde payını gösteren progress bar alanı */}
               <div className="flex items-center gap-2">
-                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+                <div className="flex-1 h-3 bg-muted rounded-full overflow-hidden">
                   <div
                     className={`h-full ${priority.color} rounded-full`}
                     style={{

@@ -5,155 +5,217 @@ Bu doküman, `react-shadcn-me` projesinin dosya yapısını detaylı bir şekild
 ## Genel Dosya Yapısı
 
 ```
-react-shadcn-me/
-├── .gitignore
 ├── components.json
-├── eslint.config.mjs
-├── next.config.ts
-├── package-lock.json
-├── package.json
-├── postcss.config.mjs
-├── README.md
-├── tsconfig.json
-├── .next/
-├── doc/
+├── doc
+│   ├── AppRouter
+│   │   └── nextjs-app-router-felsefesi.md
+│   ├── context-provider
+│   │   └── kutu-ornegi-react-context.md
+│   ├── done.txt
+│   ├── hooks
+│   │   ├── state
+│   │   │   └── react-useState-notlari.md
+│   │   ├── useCallback
+│   │   │   ├── useCallback-notu.md
+│   │   │   └── useCallback_performans_rehberi.md
+│   │   ├── useContext
+│   │   │   ├── react-useContext-kilavuz.md
+│   │   │   └── tree.txt
+│   │   ├── useEffect
+│   │   │   └── react-useEffect-temel-notlar.md
+│   │   └── useMemo
+│   │       └── useMemo-not.md
 │   ├── kaynak.txt
 │   ├── link.txt
 │   ├── nextjs-app-router-render-kural-notlari.md
 │   ├── project-structure.md
+│   ├── props
+│   │   ├── react-callback-props-selectedid-notlari.md
+│   │   ├── react-children-panel-notlari.md
+│   │   └── react-lifting-vs-callback-extended.md
 │   ├── react-nextjs-roadmap.md
-│   └── props/
-│       ├── react-callback-props-selectedid-notlari.md
-│       ├── react-children-panel-notlari.md
-│       └── react-lifting-vs-callback-extended.md
-├── node_modules/
-├── public/
+│   ├── todo-app
+│   │   ├── Theme-Context-Anlatim
+│   │   │   ├── theme-context-core-note.md
+│   │   │   └── theme-useeffect-dokumani.md
+│   │   └── todo-app-plan.md
+│   ├── tree-code.txt
+│   └── ts
+│       ├── react-state-object-spread.md
+│       └── type-vs-interface-notlar.md
+├── eslint.config.mjs
+├── .gitignore
+├── next.config.ts
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── public
 │   ├── file.svg
 │   ├── globe.svg
 │   ├── next.svg
 │   ├── vercel.svg
 │   └── window.svg
-└── src/
-    ├── app/
-    │   ├── favicon.ico
-    │   ├── globals.css
-    │   ├── layout.tsx
-    │   ├── page.tsx
-    │   ├── (dashboard)/
-    │   │   ├── layout.tsx
-    │   │   └── dashboard/
-    │   │       └── page.tsx
-    │   └── (learn)/
-    │       └── learn/
-    │           ├── layout.tsx
-    │           ├── page.tsx
-    │           ├── components/
-    │           │   └── page.tsx
-    │           ├── hook/
-    │           │   ├── page.tsx
-    │           │   ├── context/           # 🎨 useContext Bölümü EKLENDİ
-    │           │   │   ├── layout.tsx     # ThemeProvider ile saran layout
-    │           │   │   └── page.tsx       # Ana useContext demo sayfası
-    │           │   └── effect/
-    │           │       ├── page.tsx
-    │           │       ├── basic/
-    │           │       │   └── page.tsx
-    │           │       ├── cleanup/
-    │           │       │   └── page.tsx
-    │           │       └── fetch/
-    │           │           └── page.tsx
-    │           ├── props/
-    │           │   ├── layout.tsx
-    │           │   ├── page.tsx
-    │           │   ├── basic/
-    │           │       └── page.tsx
-    │           │   ├── callback/
-    │           │       └── page.tsx
-    │           │   └── children/
-    │           │       └── page.tsx
-    │           └── state/
-    │               ├── layout.tsx
-    │               ├── page.tsx
-    │               ├── basic/
-    │               │   └── page.tsx
-    │               ├── lifting/
-    │               │   └── page.tsx
-    │               └── objects-arrays/
-    │                   └── page.tsx
-    ├── components/
-    │   ├── typography-demo.tsx
-    │   ├── shared/
-    │   │   ├── app-sidebar.tsx
-    │   │   ├── chart-area-interactive.tsx
-    │   │   ├── data-table.tsx
-    │   │   ├── nav-documents.tsx
-    │   │   ├── nav-main.tsx
-    │   │   ├── nav-secondary.tsx
-    │   │   ├── nav-user.tsx
-    │   │   ├── search-form.tsx
-    │   │   ├── section-cards.tsx
-    │   │   └── site-header.tsx
-    │   └── ui/
-    │       ├── alert.tsx
-    │       ├── avatar.tsx
-    │       ├── badge.tsx
-    │       ├── breadcrumb.tsx
-    │       ├── button.tsx
-    │       ├── card.tsx
-    │       ├── chart.tsx
-    │       ├── checkbox.tsx
-    │       ├── collapsible.tsx
-    │       ├── drawer.tsx
-    │       ├── dropdown-menu.tsx
-    │       ├── input.tsx
-    │       ├── label.tsx
-    │       ├── select.tsx
-    │       ├── separator.tsx
-    │       ├── sheet.tsx
-    │       ├── sidebar.tsx
-    │       ├── skeleton.tsx
-    │       ├── sonner.tsx
-    │       ├── table.tsx
-    │       ├── tabs.tsx
-    │       ├── toggle-group.tsx
-    │       ├── toggle.tsx
-    │       └── tooltip.tsx
-    ├── config/
-    │   └── navigation.ts
-    ├── features/
-    │   ├── dashboard/
-    │   │   ├── data.json
-    │   │   ├── api/
-    │   │   ├── components/
-    │   │   └── hooks/
-    │   └── learn/
-    │       ├── hooks/
-    │       │   ├── effect/
-    │       │   │   └── example/
-    │       │   │       ├── useEffectBasic.tsx
-    │       │   │       ├── useEffectCleanup.tsx
-    │       │   │       └── useEffectFetch.tsx
-    │       │   └── context/              # 🎨 Tema sistemi dosyaları EKLENDİ
-    │       │       └── theme/
-    │       │           ├── ThemeContext.tsx
-    │       │           ├── ThemeProvider.tsx
-    │       │           └── ThemeToggle.tsx
-    │       ├── props/
-    │       │   └── examples/
-    │       │       ├── BasicPropsExample.tsx
-    │       │       ├── CallbackExample.tsx
-    │       │       └── ChildrenExample.tsx
-    │       └── state/
-    │           └── examples/
-    │               ├── BasicStateExample.tsx
-    │               ├── LiftingExample.tsx
-    │               └── ObjectsArraysExample.tsx
-    ├── hooks/
-    │   └── use-mobile.ts
-    ├── lib/
-    │   └── utils.ts
-    └── types/
-        └── index.ts
+├── README.md
+├── src
+│   ├── app
+│   │   ├── (dashboard)
+│   │   │   ├── dashboard
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── (learn)
+│   │   │   └── learn
+│   │   │       ├── components
+│   │   │       │   └── page.tsx
+│   │   │       ├── hooks
+│   │   │       │   ├── context
+│   │   │       │   │   ├── layout.tsx
+│   │   │       │   │   └── page.tsx
+│   │   │       │   ├── effect
+│   │   │       │   │   ├── basic
+│   │   │       │   │   │   └── page.tsx
+│   │   │       │   │   ├── cleanup
+│   │   │       │   │   │   └── page.tsx
+│   │   │       │   │   ├── fetch
+│   │   │       │   │   │   └── page.tsx
+│   │   │       │   │   └── page.tsx
+│   │   │       │   └── page.tsx
+│   │   │       ├── layout.tsx
+│   │   │       ├── page.tsx
+│   │   │       ├── props
+│   │   │       │   ├── basic
+│   │   │       │   │   └── page.tsx
+│   │   │       │   ├── callback
+│   │   │       │   │   └── page.tsx
+│   │   │       │   ├── children
+│   │   │       │   │   └── page.tsx
+│   │   │       │   ├── layout.tsx
+│   │   │       │   └── page.tsx
+│   │   │       └── state
+│   │   │           ├── basic
+│   │   │           │   └── page.tsx
+│   │   │           ├── layout.tsx
+│   │   │           ├── lifting
+│   │   │           │   └── page.tsx
+│   │   │           ├── objects-arrays
+│   │   │           │   └── page.tsx
+│   │   │           └── page.tsx
+│   │   ├── page.tsx
+│   │   └── (todo-app)
+│   │       └── todo-app
+│   │           ├── layout.tsx
+│   │           └── page.tsx
+│   ├── components
+│   │   ├── shared
+│   │   │   ├── app-sidebar.tsx
+│   │   │   ├── chart-area-interactive.tsx
+│   │   │   ├── data-table.tsx
+│   │   │   ├── nav-documents.tsx
+│   │   │   ├── nav-main.tsx
+│   │   │   ├── nav-secondary.tsx
+│   │   │   ├── nav-user.tsx
+│   │   │   ├── search-form.tsx
+│   │   │   ├── section-cards.tsx
+│   │   │   └── site-header.tsx
+│   │   ├── typography-demo.tsx
+│   │   └── ui
+│   │       ├── alert-dialog.tsx
+│   │       ├── alert.tsx
+│   │       ├── avatar.tsx
+│   │       ├── badge.tsx
+│   │       ├── breadcrumb.tsx
+│   │       ├── button.tsx
+│   │       ├── calendar.tsx
+│   │       ├── card.tsx
+│   │       ├── chart.tsx
+│   │       ├── checkbox.tsx
+│   │       ├── collapsible.tsx
+│   │       ├── dialog.tsx
+│   │       ├── drawer.tsx
+│   │       ├── dropdown-menu.tsx
+│   │       ├── form.tsx
+│   │       ├── input.tsx
+│   │       ├── label.tsx
+│   │       ├── popover.tsx
+│   │       ├── progress.tsx
+│   │       ├── select.tsx
+│   │       ├── separator.tsx
+│   │       ├── sheet.tsx
+│   │       ├── sidebar.tsx
+│   │       ├── skeleton.tsx
+│   │       ├── sonner.tsx
+│   │       ├── switch.tsx
+│   │       ├── table.tsx
+│   │       ├── tabs.tsx
+│   │       ├── textarea.tsx
+│   │       ├── toggle-group.tsx
+│   │       ├── toggle.tsx
+│   │       └── tooltip.tsx
+│   ├── config
+│   │   └── navigation.ts
+│   ├── features
+│   │   ├── dashboard
+│   │   │   ├── api
+│   │   │   ├── components
+│   │   │   ├── data.json
+│   │   │   └── hooks
+│   │   ├── learn
+│   │   │   ├── hooks
+│   │   │   │   ├── context
+│   │   │   │   │   └── theme
+│   │   │   │   │       ├── ThemeContext.tsx
+│   │   │   │   │       ├── ThemeProvider.tsx
+│   │   │   │   │       └── ThemeToggle.tsx
+│   │   │   │   └── effect
+│   │   │   │       └── examples
+│   │   │   │           ├── UseEffect_Basic.tsx
+│   │   │   │           ├── UseEffect_Cleanup.tsx
+│   │   │   │           └── UseEffect_Fetch.tsx
+│   │   │   ├── props
+│   │   │   │   └── examples
+│   │   │   │       ├── BasicPropsExample.tsx
+│   │   │   │       ├── CallbackExample.tsx
+│   │   │   │       └── ChildrenExample.tsx
+│   │   │   └── state
+│   │   │       └── examples
+│   │   │           ├── BasicStateExample.tsx
+│   │   │           ├── LiftingExample.tsx
+│   │   │           └── ObjectsArraysExample.tsx
+│   │   └── todo
+│   │       ├── components
+│   │       │   ├── EditDialog.tsx
+│   │       │   ├── Filters.tsx
+│   │       │   ├── ThemeToggle.tsx
+│   │       │   ├── TodoForm.tsx
+│   │       │   ├── TodoItem.tsx
+│   │       │   ├── TodoList.tsx
+│   │       │   └── TodoStats.tsx
+│   │       ├── context
+│   │       │   ├── ThemeContext.tsx
+│   │       │   ├── theme.types.ts
+│   │       │   └── TodoContext.tsx
+│   │       ├── data
+│   │       │   └── mock-todos.ts
+│   │       ├── hooks
+│   │       │   ├── useTodoActions.ts
+│   │       │   ├── useTodoFilters.ts
+│   │       │   └── useTodos.ts
+│   │       ├── types
+│   │       │   └── index.ts
+│   │       └── utils
+│   │           ├── localStorage.ts
+│   │           └── todoHelpers.ts
+│   ├── hooks
+│   │   └── use-mobile.ts
+│   ├── lib
+│   │   └── utils.ts
+│   └── types
+│       └── index.ts
+└── tsconfig.json
+
 
 ```
 

@@ -44,8 +44,8 @@ interface TodoItemProps {
 
 export default function TodoItem({ todo }: TodoItemProps) {
   const { toggleTodo, deleteTodo, updateTodo } = useTodos();
-  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const [showEditDialog, setShowEditDialog] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false); // Silme dialogu gösteren
+  const [showEditDialog, setShowEditDialog] = useState(false); // Düzenleme dialogu gösteren
 
   const isOverdue = todo.dueDate && !todo.completed && new Date(todo.dueDate) < new Date();
 
@@ -130,7 +130,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
           <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
             {todo.dueDate && (
               <div className="flex items-center gap-1">
-                <Calendar className="h-3 w-3" />
+                <Calendar className="h-3 w-3" /> 
                 <span className={isOverdue ? "text-destructive font-medium" : ""}>
                   {formatTodoDate(todo.dueDate)}
                 </span>

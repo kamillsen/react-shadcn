@@ -10,7 +10,7 @@ import Filters from '@/features/todo/components/Filters';
 import ThemeToggle from '@/features/todo/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Sun, Moon } from 'lucide-react';
+
 
 export default function TodoAppPage() {
   const { theme } = useTheme();

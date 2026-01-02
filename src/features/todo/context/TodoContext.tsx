@@ -129,6 +129,12 @@ export function TodoProvider({ children }: TodoProviderProps) {
   // useMemo: Filtrelenmiş ve sıralanmış todo'ları cache'le
   const filteredAndSortedTodos = useMemo(() => {
     console.log('Todo listesi yeniden hesaplanıyor...');
+    console.log('Mevcut state:', state);
+    console.log('Mevcut todo sayısı:', state.todos.length);
+    console.log('Arama sorgusu:', state.searchQuery);
+    console.log('Filtre:', state.filter);
+    console.log('Sıralama:', state.sortBy, state.sortDirection);  
+    
     
     // 1. Arama sorgusuna göre filtrele
     let filtered = state.todos;
