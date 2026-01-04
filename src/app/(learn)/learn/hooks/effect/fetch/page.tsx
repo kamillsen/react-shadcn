@@ -24,7 +24,7 @@ export default function UseEffectFetchPage() {
       <div className="flex flex-col space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Link href="/learn/hook/effect">
+            <Link href="/learn/hooks/effect">
               <Button variant="outline" size="icon">
                 <ArrowLeft className="h-4 w-4" />
               </Button>
@@ -184,7 +184,7 @@ export default function UseEffectFetchPage() {
 
           {/* Back Button */}
           <div className="flex justify-center">
-            <Link href="/learn/hook/effect" className="w-full">
+            <Link href="/learn/hooks/effect" className="w-full">
               <Button variant="outline" className="w-full gap-2">
                 <ArrowLeft className="h-4 w-4" />
                 Tüm useEffect Örneklerine Dön

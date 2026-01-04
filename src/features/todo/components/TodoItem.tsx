@@ -65,7 +65,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
         todo.completed && "opacity-60 bg-muted/30"
       )}>
         {/* Checkbox */}
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <button
             onClick={handleToggle}
             className={cn(
@@ -158,7 +158,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
         </div>
 
         {/* Action menu */}
-        <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">

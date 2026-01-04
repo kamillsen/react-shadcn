@@ -60,7 +60,7 @@ export default function UseEffectIntroPage() {
 
       {/* Geri Butonu */}
       <section>
-        <Link href="/learn/hook">
+        <Link href="/learn/hooks">
           <Button variant="outline">Hooks Ana Sayfa</Button>
         </Link>
       </section>

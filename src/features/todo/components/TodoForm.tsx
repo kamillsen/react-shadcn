@@ -25,19 +25,29 @@ import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 
 export default function TodoForm() {
+  // Todo eklemek için context'ten addTodo fonksiyonunu alıyoruz
   const { addTodo } = useTodos();
+  // Görev başlığı için state
   const [title, setTitle] = useState('');
+  // Görev açıklaması için state
   const [description, setDescription] = useState('');
+  // Öncelik seviyesi için state (düşük, orta, yüksek)
   const [priority, setPriority] = useState<'low' | 'medium' | 'high'>('medium');
+  // Son tarih için state
   const [dueDate, setDueDate] = useState<Date | undefined>(undefined);
+  // Eklenen etiketlerin listesi için state
   const [tags, setTags] = useState<string[]>([]);
+  // Etiket input alanındaki geçici değer için state
   const [tagInput, setTagInput] = useState('');
 
+  // Form gönderildiğinde çalışan fonksiyon
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Başlık boşsa işlemi durdur
     if (!title.trim()) return;
 
+    // Yeni görevi ekle
     addTodo({
       title: title.trim(),
       description: description.trim() || undefined,
@@ -55,17 +65,21 @@ export default function TodoForm() {
     setTagInput('');
   };
 
+  // Etiket ekleme fonksiyonu
   const handleAddTag = () => {
+    // Etiket boş değilse ve daha önce eklenmemişse ekle
     if (tagInput.trim() && !tags.includes(tagInput.trim())) {
       setTags([...tags, tagInput.trim()]);
       setTagInput('');
     }
   };
 
+  // Etiket silme fonksiyonu
   const handleRemoveTag = (tagToRemove: string) => {
     setTags(tags.filter(tag => tag !== tagToRemove));
   };
 
+  // Klavye tuşlarına basıldığında çalışan fonksiyon (Enter ile etiket ekleme)
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && tagInput.trim()) {
       e.preventDefault();
@@ -74,7 +88,9 @@ export default function TodoForm() {
   };
 
   return (
+    // Ana form container'ı
     <form onSubmit={handleSubmit} className="space-y-4 p-6 border rounded-lg bg-card">
+      {/* Görev başlığı input alanı */}
       <div className="space-y-2">
         <Label htmlFor="title">Görev Başlığı *</Label>
         <Input
@@ -86,6 +102,7 @@ export default function TodoForm() {
         />
       </div>
 
+      {/* Görev açıklaması textarea alanı */}
       <div className="space-y-2">
         <Label htmlFor="description">Açıklama (İsteğe Bağlı)</Label>
         <Textarea
@@ -97,7 +114,9 @@ export default function TodoForm() {
         />
       </div>
 
+      {/* Öncelik ve son tarih alanları (yan yana) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Öncelik seçimi dropdown'ı */}
         <div className="space-y-2">
           <Label>Öncelik</Label>
           <Select value={priority} onValueChange={(value: 'low' | 'medium' | 'high') => setPriority(value)}>
@@ -112,6 +131,7 @@ export default function TodoForm() {
           </Select>
         </div>
 
+        {/* Son tarih seçimi (takvim popover'ı) */}
         <div className="space-y-2">
           <Label>Son Tarih (İsteğe Bağlı)</Label>
           <Popover>
@@ -139,8 +159,10 @@ export default function TodoForm() {
         </div>
       </div>
 
+      {/* Etiketler bölümü */}
       <div className="space-y-2">
         <Label>Etiketler (İsteğe Bağlı)</Label>
+        {/* Etiket ekleme input ve buton */}
         <div className="flex gap-2">
           <Input
             placeholder="Etiket ekle (Enter'a bas)"
@@ -153,6 +175,7 @@ export default function TodoForm() {
           </Button>
         </div>
         
+        {/* Eklenen etiketlerin gösterildiği alan */}
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-2">
             {tags.map((tag) => (
@@ -161,6 +184,7 @@ export default function TodoForm() {
                 className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm"
               >
                 {tag}
+                {/* Etiket silme butonu */}
                 <button
                   type="button"
                   onClick={() => handleRemoveTag(tag)}
@@ -174,6 +198,7 @@ export default function TodoForm() {
         )}
       </div>
 
+      {/* Form gönderme butonu */}
       <Button type="submit" className="w-full" size="lg">
         <Plus className="mr-2 h-4 w-4" />
         Görev Ekle
